@@ -25,7 +25,7 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
 		<div className="bg-slate-50 rounded-lg shadow-lg overflow-clip">
 			<div className="px-4 py-5 flex flex-col gap-y-2">
 				<div className="flex items-center justify-between">
-					<h2 className="text-3xl font-semibold">{title}</h2>
+					<h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">{title}</h2>
 					{linkFile && (
 						<a
 							href={linkFile}
@@ -37,9 +37,9 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
 						</a>
 					)}
 				</div>
-				<h3 className="text-xl text-gray-600">{tag}</h3>
+				<h3 className="text-md lg:text-xl text-gray-600">{tag}</h3>
 				{until ? (
-					<p className="text-lg text-cyan-700">
+					<p className="text-sm lg:text-lg text-cyan-700">
 						{from} - {until}
 					</p>
 				) : (
@@ -62,7 +62,7 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
 						</i>
 					</button>
 				) : (
-					<p className="font-semibold text-xl">{valueDesc}</p>
+					<p className="font-semibold text-md lg:text-xl">{valueDesc}</p>
 				)}
 				<ul
 					className={`flex flex-col gap-y-1.5 ${
@@ -74,7 +74,7 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
 					{listDescription && (
 						<>
 							{listDescription.map((el) => {
-								return <li key={el}>{el}</li>;
+								return <li className="text-sm md:text-lg" key={el}>{el}</li>;
 							})}
 						</>
 					)}

@@ -1,9 +1,14 @@
+"use client"
 import CardDescription from "@/components/card-description";
-import React from "react";
+import { useInView } from "framer-motion";
+import React, { useRef } from "react";
 
 const Experience = () => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { amount: 0.8, once: true });
 	return (
 		<section
+			ref={ref}
 			id="experience"
 			className="min-h-[30rem]"
 		>
@@ -12,7 +17,7 @@ const Experience = () => {
 				<div className="py-8">
 					<h1 className="text-2xl text-center font-semibold">My Experience</h1>
 					<div className="flex flex-col gap-y-8">
-						<div className="flex flex-col gap-y-3">
+						<div className="flex flex-col gap-y-7">
 							<h3 className="text-xl underline underline-offset-4">
 								Education
 							</h3>
