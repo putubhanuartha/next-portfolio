@@ -1,5 +1,6 @@
 import CardImage from "@/components/card-image";
 import React from "react";
+import { portfolios } from "@/data";
 
 const Portfolio = () => {
 	return (
@@ -11,21 +12,15 @@ const Portfolio = () => {
 				<div className="w-full h-[0.5px] bg-cyan-600"></div>
 				<div className="py-8">
 					<h1 className="text-2xl text-center">My Portfolio</h1>
-					<div className="flex flex-wrap gap-x-5 mx-auto mt-5">
-						<CardImage
-							urlImage="/portfolio/gala.png"
-							linkRepo={["https://github.com"]}
-							tag="Next Js, React Js, Framer Motion"
-							title="GALA 55 Concert Ticket Website"
-							linkDeployed={["https://gala-website-client.vercel.app"]}
-						/>
-						<CardImage
-							urlImage="/portfolio/web-desa.png"
-							linkRepo={["https://github.com"]}
-							tag="React Js, Framer Motion, Chart Js"
-							title="Website Desa Sidorejo Client Application"
-							linkDeployed={["https://website-desa-client-ashen.vercel.app"]}
-						/>
+					<div className="flex flex-wrap gap-x-5 mx-auto mt-5 gap-y-5">
+						{portfolios.map((el, index) => {
+							return (
+								<CardImage
+									key={index}
+									{...el}
+								/>
+							);
+						})}
 					</div>
 				</div>
 			</div>

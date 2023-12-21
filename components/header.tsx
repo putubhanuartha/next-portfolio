@@ -5,13 +5,18 @@ import ListNav from "./list-nav";
 import { Twirl as Hamburger } from "hamburger-react";
 import { Menu, Transition } from "@headlessui/react";
 import { listNav } from "@/data";
-import useScrollDirection from "@/hooks/useScrollDirection";
+import { useStore } from "@/data/index";
+
 const Header = () => {
-	const [isOpen, setOpen] = useState(false);
-	const direction = useScrollDirection();
-	
+	const [_, setOpen] = useState(false);
+	const isNavbarHidden = useStore((state) => state.isNavbarHidden);
+
 	return (
-		<header className="fixed z-50 top-0 left-0 right-0 bg-slate-100 shadow-lg h-20 flex items-center justify-center">
+		<header
+			className={`fixed ${
+				isNavbarHidden ? "-translate-y-80" : "translate-y-0"
+			}  z-50 top-0 transition-all duration-500 left-0 right-0 bg-slate-100 shadow-lg h-20 flex items-center justify-center`}
+		>
 			<div className="container flex justify-between mx-auto items-center">
 				<Link href={"/"}>
 					<h1 className="font-semibold lg:text-3xl text-xl md:text-2xl">

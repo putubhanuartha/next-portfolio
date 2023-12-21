@@ -1,12 +1,21 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { MdOutlineGpsFixed } from "react-icons/md";
 import { motion, useInView } from "framer-motion";
+import { useStore } from "@/data/index";
 const Hero = () => {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { amount: 0.8, once: true });
+	const isInViewHero = useInView(ref, { amount: 0.3, once: false });
+	const setIsInViewHero = useStore((state) => state.setIsInViewHero);
+	const setIsNavbarHidden = useStore((state) => state.setIsNavbarHidden);
+
+	useEffect(() => {
+		setIsInViewHero(isInViewHero);
+		setIsNavbarHidden()
+	}, [isInViewHero, setIsInViewHero, setIsNavbarHidden]);
 	return (
 		<div
 			ref={ref}

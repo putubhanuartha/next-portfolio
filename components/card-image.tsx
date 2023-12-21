@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { FaDocker } from "react-icons/fa";
 import Link from "next/link";
 export type CardImageProps = {
 	urlImage: string;
@@ -9,7 +10,11 @@ export type CardImageProps = {
 	tag: string;
 	linkRepo: string[];
 	linkDemo?: string[];
-	linkDeployed: string[];
+	linkDeployed?: string[];
+	dockerDownload?: {
+		linkDownload: string;
+		videoLink: "https://drive.google.com/file/d/1BisU8PNEVQYY8vwaTDTEkrfu0564F_hj/view?usp=sharing";
+	};
 };
 const CardImage: React.FC<CardImageProps> = ({
 	linkRepo,
@@ -18,6 +23,7 @@ const CardImage: React.FC<CardImageProps> = ({
 	urlImage,
 	linkDemo,
 	linkDeployed,
+	dockerDownload,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	function closeModal() {
@@ -100,7 +106,7 @@ const CardImage: React.FC<CardImageProps> = ({
 														<li key={el}>
 															<Link
 																href={el}
-																className="underline text-blue-600 hover:text-blue-800"
+																className="text-sm underline text-blue-600 hover:text-blue-800"
 															>
 																{el}
 															</Link>
@@ -118,7 +124,7 @@ const CardImage: React.FC<CardImageProps> = ({
 															<li key={el}>
 																<Link
 																	href={el}
-																	className="underline text-blue-600 hover:text-blue-800"
+																	className="text-sm underline text-blue-600 hover:text-blue-800"
 																>
 																	{el}
 																</Link>
@@ -128,23 +134,48 @@ const CardImage: React.FC<CardImageProps> = ({
 												</ul>
 											</div>
 										)}
-										<div>
-											<h4>Link Deployed </h4>
-											<ul className="list-disc px-6">
-												{linkDeployed.map((el) => {
-													return (
-														<li key={el}>
-															<Link
-																href={el}
-																className="underline text-blue-600 hover:text-blue-800"
-															>
-																{el}
-															</Link>
-														</li>
-													);
-												})}
-											</ul>
-										</div>
+										{linkDeployed && (
+											<div>
+												<h4>Link Deployed </h4>
+												<ul className="list-disc px-6">
+													{linkDeployed.map((el) => {
+														return (
+															<li key={el}>
+																<Link
+																	href={el}
+																	className="underline text-blue-600 hover:text-blue-800 text-sm"
+																>
+																	{el}
+																</Link>
+															</li>
+														);
+													})}
+												</ul>
+											</div>
+										)}
+										{dockerDownload && (
+											<div>
+												<h4 className="flex items-center gap-x-2">
+													Run it with
+													<span className="text-blue-400">
+														<FaDocker size={20} />
+													</span>{" "}
+												</h4>
+												<ul className="list-disc px-6">
+													<li className="flex items-center gap-x-3">
+														<Link
+															href={dockerDownload.linkDownload}
+															className="text-sm underline text-blue-600 hover:text-blue-800"
+														>
+															Install with Docker
+														</Link>
+														<Link href={dockerDownload.videoLink} className="text-sm underline text-blue-600 hover:text-blue-800">
+															How to use docker compose?
+														</Link>
+													</li>
+												</ul>
+											</div>
+										)}
 									</div>
 
 									<div className="mt-4">
