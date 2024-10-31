@@ -110,8 +110,8 @@ members.`,
 		},
 		{
 			from: 'Sep 2023',
-			tag: 'Faculty of Computer Science (FILKOM) University of Brawijaya',
-			title: 'Database Administration Laboratory Assistant',
+			tag: 'Database Administration Laboratory Assistant',
+			title: 'Faculty of Computer Science (FILKOM) University of Brawijaya',
 			linkFile: '/file/assistant.jpeg',
 			valueDesc: 'Description',
 			until: 'Dec 2023',
@@ -123,8 +123,8 @@ migration, database backup and recovery, database security, and advanced databas
 			],
 		},
 		{
-			tag: 'Core Initiative Studio Project-Based Internship',
-			title: 'Frontend Developer Intern',
+			tag: 'Frontend Developer Intern',
+			title: 'Core Initiative Studio Project-Based Internship',
 			from: 'Aug 2023',
 			until: 'Sep 2023',
 			linkFile : '/file/core-initiative.jpeg',
@@ -138,8 +138,8 @@ migration, database backup and recovery, database security, and advanced databas
 		{
 			from: 'Feb 2024',
 			linkFile : '/file/suitmedia.jpeg',
-			tag: 'PT Suitmedia Kreasi Indonesia',
-			title: 'Frontend Developer Intern',
+			tag: 'Frontend Developer Intern',
+			title: 'PT Suitmedia Kreasi Indonesia',
 			valueDesc: 'Description',
 			listDescription: [
 				`Slicing UI from figma into web application using Vue JS with Nuxt Js Framework`,
@@ -150,8 +150,8 @@ migration, database backup and recovery, database security, and advanced databas
 		},
 		{
 			from: 'Jul 2024',
-			tag: 'PT Sekawan Media Informatika',
-			title: 'Frontend Developer Intern',
+			tag: 'Frontend Developer Intern',
+			title: 'PT Sekawan Media Informatika',
 			valueDesc: `Description`,
 			listDescription: [
 				`Slicing UI from figma into web application using React.Js using Next.Js  `,
